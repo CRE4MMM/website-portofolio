@@ -1,0 +1,72 @@
+/* Tema kustom di atas Bootstrap 5.3 — hanya override variabel & sentuhan kecil */
+:root {
+  --bs-primary: #635bdb;
+  --bs-primary-rgb: 99, 91, 219;
+  --bs-link-color: #635bdb;
+  --bs-link-color-rgb: 99, 91, 219;
+  --bs-link-hover-color: #4f46c9;
+  --bs-link-hover-color-rgb: 79, 70, 201;
+  --bs-body-bg: #f8f9fc;
+  --bs-body-color: #171725;
+  --bs-secondary-color: #68697b;
+  --bs-border-color: #e9e8f0;
+  --bs-body-font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --bs-border-radius-lg: 24px;
+  --accent-soft: #eeecff;
+  --accent-dark: #4f46c9;
+}
+
+html { scroll-behavior: smooth; }
+body { line-height: 1.7; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { letter-spacing: -0.7px; }
+
+/* Tombol */
+.btn-primary {
+  --bs-btn-bg: #635bdb; --bs-btn-border-color: #635bdb;
+  --bs-btn-hover-bg: #4f46c9; --bs-btn-hover-border-color: #4f46c9;
+  --bs-btn-active-bg: #4f46c9; --bs-btn-active-border-color: #4f46c9;
+}
+.btn-outline-primary {
+  --bs-btn-color: #635bdb; --bs-btn-border-color: #635bdb;
+  --bs-btn-hover-bg: #eeecff; --bs-btn-hover-color: #4f46c9; --bs-btn-hover-border-color: #635bdb;
+  --bs-btn-active-bg: #eeecff; --bs-btn-active-color: #4f46c9;
+}
+.btn { border-radius: 11px; font-weight: 650; padding: 0.7rem 1.4rem; transition: all .3s ease; }
+.btn:hover { transform: translateY(-3px); }
+
+/* Navbar */
+.navbar { background: rgba(255,255,255,.88) !important; backdrop-filter: blur(16px); }
+.navbar-brand { letter-spacing: -0.7px; font-size: 1.2rem; }
+.navbar .nav-link { color: var(--bs-secondary-color); font-weight: 500; }
+.navbar .nav-link:hover { background: var(--accent-soft); color: #635bdb; }
+.navbar .nav-link.active { background: #635bdb; color: #fff; box-shadow: 0 5px 15px rgba(99,91,219,.2); }
+
+/* Card */
+.card { border-radius: 16px; box-shadow: 0 4px 15px rgba(24,24,50,.04); transition: all .3s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(24,24,50,.08); border-color: #d9d5ff; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-radius: 24px; }
+.hero:hover { transform: none; }
+.hero::before {
+  content: ""; position: absolute; width: 280px; height: 280px; right: -130px; top: -160px;
+  background: var(--accent-soft); border-radius: 50%; opacity: .65; pointer-events: none;
+}
+.hero .row { position: relative; z-index: 1; }
+.avatar {
+  width: 200px; height: 200px; object-fit: cover; object-position: center 25%;
+  border: 5px solid var(--accent-soft); background: var(--accent-soft);
+  box-shadow: 0 12px 30px rgba(99,91,219,.15);
+}
+@media (max-width: 575.98px) { .avatar { width: 165px; height: 165px; } }
+
+/* Badge lembut (chips / tag) */
+.text-bg-primary-soft { background: var(--accent-soft); color: var(--accent-dark); }
+ul .badge.text-bg-primary-soft { padding: .55rem 1rem; font-size: .9rem !important; transition: all .3s ease; }
+ul .badge.text-bg-primary-soft:hover { background: #635bdb; color: #fff; transform: translateY(-2px); }
+
+/* Aksesibilitas */
+a:focus-visible, button:focus-visible { outline: 3px solid rgba(99,91,219,.45); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
